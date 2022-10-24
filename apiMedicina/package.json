@@ -1,0 +1,17 @@
+{
+  "name": "apimedicina",
+  "version": "1.0.0",
+  "description": "API PARA LA GESTION DE CITAS MEDICAS",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index,js",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "CAROLINA MURCIA LOPEZ",
+  "license": "ISC",
+  "dependencies": {
+    "git": "^0.1.5"
+  }
+}
