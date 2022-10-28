@@ -4,7 +4,8 @@ const rolSchema= mongoose.Schema({
     nombreRol:{
     type: String,
     require : true,
-    trim : true
+    trim : true,
+    unique:true
     },
 
     estadoRol:{
