@@ -62,7 +62,7 @@ const usuarioSchema = mongoose.Schema({
 }, {
     timestamps: true
 });
-
+//metodo para encriptar la contraseña
 usuarioSchema.pre('save', async function (next) {
     if (!this.isModified("claveAcceso")){
         next();
@@ -71,6 +71,9 @@ usuarioSchema.pre('save', async function (next) {
     this.claveAcceso = await bcrypt.hash(this.claveAcceso, salt);
 });
 
+usuarioSchema.methods.comprobarClave = async function (claveFormulario){
+    return await bcrypt.compare(claveFormulario,this.claveAcceso);
+} 
 
 const Usuario = mongoose.model("Usuario", usuarioSchema);
 export default Usuario;
